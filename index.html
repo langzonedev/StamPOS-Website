@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="StamPOS is a practical offline-first point-of-sale application for small businesses, events and market stalls.">
-  <title>StamPOS | Offline-first POS for small business</title>
+  <meta name="description" content="StamPOS is an offline-first, touch-oriented point-of-sale system for small businesses, events and market stalls.">
+  <title>StamPOS | Offline-first touch POS for small business</title>
   <link rel="icon" type="image/svg+xml" href="assets/icons/stampos-icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +21,10 @@
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
       <ul class="nav-links" id="primary-menu">
         <li><a href="#features">Features</a></li>
-        <li><a href="#payments">EFTPOS</a></li>
-        <li><a href="#cashup">Cash-up</a></li>
+        <li><a href="#operations">Operations</a></li>
+        <li><a href="#payments">Payments</a></li>
         <li><a href="#events">Events</a></li>
-        <li><a class="nav-cta" href="#contact">Contact</a></li>
+        <li><a class="nav-cta" href="#contact">Roadmap</a></li>
       </ul>
     </nav>
   </header>
@@ -33,15 +33,20 @@
     <section class="hero section-dark">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Offline-first POS for real-world selling</p>
-          <h1>Fast sales, clear totals and practical cash-up for small business.</h1>
-          <p class="hero-text">StamPOS is a desktop point-of-sale application built for counters, market stalls and multi-day events where operators need speed, clarity and reliable local operation.</p>
+          <p class="eyebrow">Offline-first, touch-oriented POS</p>
+          <h1>A practical POS that gets out of the operator's way.</h1>
+          <p class="hero-text">StamPOS is built for busy counters, market stalls and event hardware: fast checkout, local sales continuity, clear cash handling, receipt printing and payment workflows designed for real-world uncertainty.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#features">View features</a>
-            <a class="button button-secondary" href="#payments">See EFTPOS support</a>
+            <a class="button button-primary" href="#features">Explore StamPOS</a>
+            <a class="button button-secondary" href="#payments">Payment strategy</a>
+          </div>
+          <div class="hero-points" aria-label="StamPOS highlights">
+            <span>Local SQLite data</span>
+            <span>Touch-first JavaFX</span>
+            <span>Windows installer target</span>
           </div>
         </div>
-        <div class="product-card" aria-label="StamPOS product preview">
+        <div class="product-card product-card-premium" aria-label="StamPOS product preview">
           <div class="window-bar"><span></span><span></span><span></span></div>
           <div class="sale-total">
             <small>Current Sale</small>
@@ -52,85 +57,86 @@
           </div>
           <div class="status-row success"><span></span> Cash tendered: $40.00</div>
           <div class="status-row"><span></span> Change due: $5.00</div>
+          <div class="mini-receipt" aria-hidden="true">
+            <strong>Receipt ready</strong>
+            <span>Drawer kick simulated</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="trust-strip">
       <div class="container trust-grid">
-        <div><strong>Offline-first</strong><span>Local sales continuity</span></div>
-        <div><strong>AUD cash handling</strong><span>Repeated note taps</span></div>
-        <div><strong>Linkly-ready</strong><span>EFTPOS integration path</span></div>
-        <div><strong>Event-friendly</strong><span>Multi-day workflows</span></div>
+        <div><strong>No server required</strong><span>Designed for local operation</span></div>
+        <div><strong>Touch-first checkout</strong><span>Large operator controls</span></div>
+        <div><strong>Payment-aware</strong><span>Approved, declined and unknown states</span></div>
+        <div><strong>Event-ready</strong><span>X/Z reporting direction</span></div>
       </div>
     </section>
 
     <section class="section" id="features">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Core features</p>
-          <h2>Designed around the operator at the counter.</h2>
-          <p>StamPOS focuses on practical selling workflows instead of cluttered screens and unnecessary enterprise complexity.</p>
+          <p class="eyebrow">Built for actual trading</p>
+          <h2>Small-business POS without unnecessary complexity.</h2>
+          <p>The application is designed around the work happening at the counter: add products, take payment, print receipts, reconcile the day and move to the next customer.</p>
         </div>
         <div class="card-grid">
-          <article class="feature-card"><h3>Fast checkout</h3><p>Simple sales flow for busy service periods, pop-up stalls and small retail counters.</p></article>
-          <article class="feature-card"><h3>Offline cash sales</h3><p>Local desktop operation helps keep the sales process moving when internet access is unreliable.</p></article>
-          <article class="feature-card"><h3>Receipt printing</h3><p>Built with receipt output in mind for real POS environments and customer records.</p></article>
-          <article class="feature-card"><h3>Admin controls</h3><p>Technician and admin areas support setup, configuration and payment integration workflows.</p></article>
+          <article class="feature-card"><h3>Fast checkout</h3><p>Touch-friendly product buttons and a focused sale flow for busy service periods.</p></article>
+          <article class="feature-card"><h3>Local sales data</h3><p>SQLite storage on each POS terminal keeps core trading independent of a central server.</p></article>
+          <article class="feature-card"><h3>Receipt-ready</h3><p>Simulator, Windows printer and direct network printer paths support practical setup and testing.</p></article>
+          <article class="feature-card"><h3>Admin controls</h3><p>Manage products, prices, visibility, reporting periods, hardware and completed sale records.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section section-muted" id="payments">
+    <section class="section section-muted" id="operations">
       <div class="container split-grid">
         <div>
-          <p class="eyebrow">EFTPOS integration</p>
-          <h2>Payment-aware design for Linkly workflows.</h2>
-          <p>StamPOS is being shaped around Linkly Cloud REST API support, including pairing, payment status handling, recovery and receipt preservation.</p>
+          <p class="eyebrow">Operational confidence</p>
+          <h2>Prepared for market stalls, pop-ups and event days.</h2>
+          <p>StamPOS separates normal operator tasks from technician tools. Admin handles products, sales, payments and reporting. Technician tools support storage status, database health, diagnostics and pre-event readiness checks.</p>
         </div>
         <div class="panel-list">
-          <div><span class="badge success">Approved</span><p>Successful payment states should be clear and immediately actionable.</p></div>
-          <div><span class="badge warning">Unknown</span><p>Network failures must be treated as unknown until recovered or reconciled.</p></div>
-          <div><span class="badge error">Declined</span><p>Declined payments should be visually distinct from communication failures.</p></div>
+          <div><span class="badge success">Admin</span><p>Create the administrator PIN, manage products and prices, review completed sales, configure payments and select receipt printing mode.</p></div>
+          <div><span class="badge success">Technician</span><p>Run storage checks, database health checks, external archive support and pre-open readiness checks before trading begins.</p></div>
+          <div><span class="badge warning">Event flow</span><p>Zeroise/start an event reporting period, close with an itemised Z report and retain data for vendor records.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="cashup">
+    <section class="section" id="payments">
       <div class="container split-grid reverse">
-        <div class="cash-card">
-          <h3>Cash tendered</h3>
-          <div class="cash-buttons"><button>$5</button><button>$10</button><button>$20</button><button>$50</button><button>$100</button></div>
-          <dl>
-            <div><dt>Sale total</dt><dd>$35.00</dd></div>
-            <div><dt>Tendered</dt><dd>$40.00</dd></div>
-            <div><dt>Change</dt><dd>$5.00</dd></div>
-          </dl>
+        <div class="payment-flow-card">
+          <div class="flow-step active"><span>1</span><strong>Create local sale</strong><small>Payment attempt is recorded first</small></div>
+          <div class="flow-step"><span>2</span><strong>Send to terminal</strong><small>Provider-neutral transaction ID</small></div>
+          <div class="flow-step"><span>3</span><strong>Persist outcome</strong><small>Approved, declined, cancelled or unknown</small></div>
+          <div class="flow-step"><span>4</span><strong>Receipt and reconcile</strong><small>Store references and receipt text</small></div>
         </div>
         <div>
-          <p class="eyebrow">Cash handling</p>
-          <h2>Built around Australian note denominations.</h2>
-          <p>Operators can press denominations repeatedly, build a running tendered total and see the change due without mental arithmetic during a busy sale.</p>
+          <p class="eyebrow">Payments without guesswork</p>
+          <h2>Linkly-first, provider-neutral EFTPOS direction.</h2>
+          <p>StamPOS is shaped around a provider-neutral terminal workflow, with Linkly as the preferred first production path. The goal is clear operator feedback, persisted attempts and safe recovery when a terminal result is uncertain.</p>
         </div>
       </div>
     </section>
 
     <section class="section section-dark" id="events">
       <div class="container section-heading light">
-        <p class="eyebrow">Events and end-of-day</p>
-        <h2>Support for trading days that do not always end neatly.</h2>
-        <p>StamPOS can evolve cash-up and end-of-day workflows so multi-day events can be counted and reconciled without forcing a final event closure too early.</p>
+        <p class="eyebrow">Cash-up and reconciliation</p>
+        <h2>Designed for the end of the day, not just the sale.</h2>
+        <p>Cash tendering uses large AUD note buttons and high-visibility change due screens. Event reporting, Z reports, receipt reprints and future card reconciliation are treated as first-class POS workflows.</p>
       </div>
     </section>
 
     <section class="section" id="contact">
       <div class="container cta-panel">
         <div>
-          <p class="eyebrow">Next step</p>
-          <h2>Ready for screenshots, downloads and launch content.</h2>
-          <p>This public website repo contains only static marketing content. The private StamPOS application code remains separate.</p>
+          <p class="eyebrow">Product direction</p>
+          <h2>Public landing page today. Full product site next.</h2>
+          <p>Upcoming website improvements can add real application screenshots, downloads, release notes, documentation, support information and a clearer launch path.</p>
         </div>
-        <a class="button button-primary" href="mailto:hello@example.com">Contact StamPOS</a>
+        <a class="button button-primary" href="https://github.com/langzonedev/StamPOS-Website">View website repo</a>
       </div>
     </section>
   </main>
