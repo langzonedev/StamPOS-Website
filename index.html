@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/icons/stampos-icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -20,46 +20,64 @@
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
       <ul class="nav-links" id="primary-menu">
+        <li><a href="#showcase">Showcase</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#operations">Operations</a></li>
         <li><a href="#payments">Payments</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a class="nav-cta" href="#contact">Roadmap</a></li>
+        <li><a href="#operations">Operations</a></li>
+        <li><a class="nav-cta" href="#demo">Try demo</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero section-dark">
-      <div class="container hero-grid">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="container hero-grid hero-grid-wide">
         <div class="hero-copy">
           <p class="eyebrow">Offline-first, touch-oriented POS</p>
-          <h1>A practical POS that gets out of the operator's way.</h1>
-          <p class="hero-text">StamPOS is built for busy counters, market stalls and event hardware: fast checkout, local sales continuity, clear cash handling, receipt printing and payment workflows designed for real-world uncertainty.</p>
+          <h1>Point of sale software built for the person behind the counter.</h1>
+          <p class="hero-text">StamPOS keeps trading practical: big touch targets, local sales data, clear cash handling, receipt printing, event reporting and payment flows that do not pretend network failures are simple declines.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#features">Explore StamPOS</a>
-            <a class="button button-secondary" href="#payments">Payment strategy</a>
+            <a class="button button-primary" href="#showcase">See the product</a>
+            <a class="button button-secondary" href="#demo">Try cash demo</a>
           </div>
           <div class="hero-points" aria-label="StamPOS highlights">
             <span>Local SQLite data</span>
             <span>Touch-first JavaFX</span>
-            <span>Windows installer target</span>
+            <span>Linkly-first EFTPOS direction</span>
           </div>
         </div>
-        <div class="product-card product-card-premium" aria-label="StamPOS product preview">
-          <div class="window-bar"><span></span><span></span><span></span></div>
-          <div class="sale-total">
-            <small>Current Sale</small>
-            <strong>$35.00</strong>
+
+        <div class="desktop-frame hero-app-frame" aria-label="StamPOS sales screen mockup">
+          <div class="app-topbar">
+            <div class="app-brand"><img src="assets/icons/stampos-icon.svg" alt=""> <strong>StamPOS</strong></div>
+            <div class="app-status">Standalone mode | EFTPOS simulator</div>
           </div>
-          <div class="keypad-grid">
-            <button>$5</button><button>$10</button><button>$20</button><button>$50</button>
+          <div class="app-toolbar">
+            <span>Operator: Administrator</span>
+            <button>Admin</button><button>Technician</button><button>Log off</button>
           </div>
-          <div class="status-row success"><span></span> Cash tendered: $40.00</div>
-          <div class="status-row"><span></span> Change due: $5.00</div>
-          <div class="mini-receipt" aria-hidden="true">
-            <strong>Receipt ready</strong>
-            <span>Drawer kick simulated</span>
+          <div class="pos-layout">
+            <section class="sales-panel">
+              <h3>Sales menu</h3>
+              <div class="product-grid">
+                <button class="tile blue">Water<span>4.00 AUD</span></button>
+                <button class="tile blue">Soft Drink<span>5.50 AUD</span></button>
+                <button class="tile blue">Coffee<span>6.00 AUD</span></button>
+                <button class="tile blue">Beer<span>10.00 AUD</span></button>
+                <button class="tile blue">Wine<span>12.00 AUD</span></button>
+                <button class="tile orange">Meal<span>18.00 AUD</span></button>
+                <button class="tile orange">Snack<span>6.50 AUD</span></button>
+                <button class="tile purple">Merchandise<span>25.00 AUD</span></button>
+              </div>
+            </section>
+            <aside class="sale-panel">
+              <h3>Current sale</h3>
+              <div class="sale-empty">Tap a product to begin</div>
+              <strong class="sale-total-line">TOTAL&nbsp;&nbsp;0.00 AUD</strong>
+              <button class="pay-button">PAY</button>
+            </aside>
           </div>
         </div>
       </div>
@@ -74,18 +92,100 @@
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section" id="showcase">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">Product showcase</p>
+          <h2>The app is the marketing.</h2>
+          <p>StamPOS is not trying to be a generic SaaS dashboard. The interface is built around real event hardware, fast operator decisions and keeping the queue moving.</p>
+        </div>
+        <div class="showcase-grid">
+          <article class="screen-card dark-screen">
+            <div class="screen-card-header"><span>Sales</span><strong>Touch menu</strong></div>
+            <div class="mini-sales-grid">
+              <span class="blue"></span><span class="blue"></span><span class="blue"></span><span class="blue"></span>
+              <span class="orange"></span><span class="orange"></span><span class="purple"></span>
+            </div>
+            <p>Large product tiles, visible totals and an obvious PAY action.</p>
+          </article>
+          <article class="screen-card light-screen">
+            <div class="screen-card-header"><span>Admin</span><strong>Local control</strong></div>
+            <div class="table-preview">
+              <span>SKU</span><span>Name</span><span>Price</span><span>Status</span>
+              <b>WATER</b><b>Water</b><b>4.00</b><b>Active</b>
+              <b>COFFEE</b><b>Coffee</b><b>6.00</b><b>Active</b>
+              <b>MERCH</b><b>Merch</b><b>25.00</b><b>Active</b>
+            </div>
+            <p>Products, transactions, employees, reports, receipts and payments stay on-terminal.</p>
+          </article>
+          <article class="screen-card light-screen">
+            <div class="screen-card-header"><span>Technician</span><strong>Readiness</strong></div>
+            <div class="readiness-preview">
+              <button>Run readiness check</button>
+              <button>Optimize database</button>
+              <div>Storage OK · Database OK · EFTPOS simulator active</div>
+            </div>
+            <p>Separate maintenance tools keep normal event operation clean.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="features">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Built for actual trading</p>
           <h2>Small-business POS without unnecessary complexity.</h2>
-          <p>The application is designed around the work happening at the counter: add products, take payment, print receipts, reconcile the day and move to the next customer.</p>
+          <p>Everything important is visible, touchable and grounded in the sale workflow: products, payment, receipt, reporting and the next customer.</p>
         </div>
-        <div class="card-grid">
+        <div class="card-grid feature-grid-plus">
           <article class="feature-card"><h3>Fast checkout</h3><p>Touch-friendly product buttons and a focused sale flow for busy service periods.</p></article>
           <article class="feature-card"><h3>Local sales data</h3><p>SQLite storage on each POS terminal keeps core trading independent of a central server.</p></article>
           <article class="feature-card"><h3>Receipt-ready</h3><p>Simulator, Windows printer and direct network printer paths support practical setup and testing.</p></article>
-          <article class="feature-card"><h3>Admin controls</h3><p>Manage products, prices, visibility, reporting periods, hardware and completed sale records.</p></article>
+          <article class="feature-card"><h3>Admin controls</h3><p>Manage products, prices, visibility, reporting periods, hardware and completed sales.</p></article>
+          <article class="feature-card"><h3>Technician tools</h3><p>Readiness checks, diagnostics, storage snapshots and database housekeeping before event start.</p></article>
+          <article class="feature-card"><h3>Event reporting</h3><p>Start reporting periods, close events with itemised Z reports and retain vendor records.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="container split-grid reverse">
+        <div class="interactive-demo" aria-label="Interactive cash tender demo">
+          <div class="demo-header"><span>Cash demo</span><strong>Sale total: $35.00</strong></div>
+          <div class="demo-buttons">
+            <button data-cash="5">$5</button>
+            <button data-cash="10">$10</button>
+            <button data-cash="20">$20</button>
+            <button data-cash="50">$50</button>
+            <button data-cash="100">$100</button>
+          </div>
+          <div class="demo-result">
+            <div><span>Tendered</span><strong id="demoTendered">$0.00</strong></div>
+            <div><span>Change due</span><strong id="demoChange">$0.00</strong></div>
+          </div>
+          <button class="demo-reset" type="button">Reset tender</button>
+        </div>
+        <div>
+          <p class="eyebrow">Operator-first cash handling</p>
+          <h2>Press notes the way customers hand them over.</h2>
+          <p>For a $35 sale, the operator can press $20 twice, see $40 tendered, then return $5 change. No mental arithmetic required while the line is building.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="payments">
+      <div class="container split-grid">
+        <div>
+          <p class="eyebrow">Payments without guesswork</p>
+          <h2>Linkly-first, provider-neutral EFTPOS direction.</h2>
+          <p>StamPOS is shaped around a provider-neutral terminal workflow, with Linkly as the preferred first production path. The goal is clear operator feedback, persisted attempts and safe recovery when a terminal result is uncertain.</p>
+        </div>
+        <div class="payment-flow-card dark-flow">
+          <div class="flow-step active"><span>1</span><strong>Create local sale</strong><small>Payment attempt is recorded first</small></div>
+          <div class="flow-step"><span>2</span><strong>Send to terminal</strong><small>Provider-neutral transaction ID</small></div>
+          <div class="flow-step"><span>3</span><strong>Persist outcome</strong><small>Approved, declined, cancelled or unknown</small></div>
+          <div class="flow-step"><span>4</span><strong>Receipt and reconcile</strong><small>Store references and receipt text</small></div>
         </div>
       </div>
     </section>
@@ -105,36 +205,12 @@
       </div>
     </section>
 
-    <section class="section" id="payments">
-      <div class="container split-grid reverse">
-        <div class="payment-flow-card">
-          <div class="flow-step active"><span>1</span><strong>Create local sale</strong><small>Payment attempt is recorded first</small></div>
-          <div class="flow-step"><span>2</span><strong>Send to terminal</strong><small>Provider-neutral transaction ID</small></div>
-          <div class="flow-step"><span>3</span><strong>Persist outcome</strong><small>Approved, declined, cancelled or unknown</small></div>
-          <div class="flow-step"><span>4</span><strong>Receipt and reconcile</strong><small>Store references and receipt text</small></div>
-        </div>
-        <div>
-          <p class="eyebrow">Payments without guesswork</p>
-          <h2>Linkly-first, provider-neutral EFTPOS direction.</h2>
-          <p>StamPOS is shaped around a provider-neutral terminal workflow, with Linkly as the preferred first production path. The goal is clear operator feedback, persisted attempts and safe recovery when a terminal result is uncertain.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="events">
-      <div class="container section-heading light">
-        <p class="eyebrow">Cash-up and reconciliation</p>
-        <h2>Designed for the end of the day, not just the sale.</h2>
-        <p>Cash tendering uses large AUD note buttons and high-visibility change due screens. Event reporting, Z reports, receipt reprints and future card reconciliation are treated as first-class POS workflows.</p>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container cta-panel">
+    <section class="section final-cta" id="contact">
+      <div class="container cta-panel cta-panel-dark">
         <div>
           <p class="eyebrow">Product direction</p>
-          <h2>Public landing page today. Full product site next.</h2>
-          <p>Upcoming website improvements can add real application screenshots, downloads, release notes, documentation, support information and a clearer launch path.</p>
+          <h2>Taking on the big guys, one practical workflow at a time.</h2>
+          <p>Next: real screenshots, downloads, release notes, documentation and a sharper launch pathway while the private application repo stays private.</p>
         </div>
         <a class="button button-primary" href="https://github.com/langzonedev/StamPOS-Website">View website repo</a>
       </div>
