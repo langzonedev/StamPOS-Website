@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StamPOS is a practical offline-first point-of-sale application for small businesses, events and market stalls.">
+  <title>StamPOS | Offline-first POS for small business</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="StamPOS home">
+        <span class="brand-mark" aria-hidden="true"><span>S</span></span>
+        <span class="brand-word">Stam<span>POS</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+      <ul class="nav-links" id="primary-menu">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#payments">EFTPOS</a></li>
+        <li><a href="#cashup">Cash-up</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a class="nav-cta" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-dark">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Offline-first POS for real-world selling</p>
+          <h1>Fast sales, clear totals and practical cash-up for small business.</h1>
+          <p class="hero-text">StamPOS is a desktop point-of-sale application built for counters, market stalls and multi-day events where operators need speed, clarity and reliable local operation.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#features">View features</a>
+            <a class="button button-secondary" href="#payments">See EFTPOS support</a>
+          </div>
+        </div>
+        <div class="product-card" aria-label="StamPOS product preview">
+          <div class="window-bar"><span></span><span></span><span></span></div>
+          <div class="sale-total">
+            <small>Current Sale</small>
+            <strong>$35.00</strong>
+          </div>
+          <div class="keypad-grid">
+            <button>$5</button><button>$10</button><button>$20</button><button>$50</button>
+          </div>
+          <div class="status-row success"><span></span> Cash tendered: $40.00</div>
+          <div class="status-row"><span></span> Change due: $5.00</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div><strong>Offline-first</strong><span>Local sales continuity</span></div>
+        <div><strong>AUD cash handling</strong><span>Repeated note taps</span></div>
+        <div><strong>Linkly-ready</strong><span>EFTPOS integration path</span></div>
+        <div><strong>Event-friendly</strong><span>Multi-day workflows</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Core features</p>
+          <h2>Designed around the operator at the counter.</h2>
+          <p>StamPOS focuses on practical selling workflows instead of cluttered screens and unnecessary enterprise complexity.</p>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card"><h3>Fast checkout</h3><p>Simple sales flow for busy service periods, pop-up stalls and small retail counters.</p></article>
+          <article class="feature-card"><h3>Offline cash sales</h3><p>Local desktop operation helps keep the sales process moving when internet access is unreliable.</p></article>
+          <article class="feature-card"><h3>Receipt printing</h3><p>Built with receipt output in mind for real POS environments and customer records.</p></article>
+          <article class="feature-card"><h3>Admin controls</h3><p>Technician and admin areas support setup, configuration and payment integration workflows.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="payments">
+      <div class="container split-grid">
+        <div>
+          <p class="eyebrow">EFTPOS integration</p>
+          <h2>Payment-aware design for Linkly workflows.</h2>
+          <p>StamPOS is being shaped around Linkly Cloud REST API support, including pairing, payment status handling, recovery and receipt preservation.</p>
+        </div>
+        <div class="panel-list">
+          <div><span class="badge success">Approved</span><p>Successful payment states should be clear and immediately actionable.</p></div>
+          <div><span class="badge warning">Unknown</span><p>Network failures must be treated as unknown until recovered or reconciled.</p></div>
+          <div><span class="badge error">Declined</span><p>Declined payments should be visually distinct from communication failures.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cashup">
+      <div class="container split-grid reverse">
+        <div class="cash-card">
+          <h3>Cash tendered</h3>
+          <div class="cash-buttons"><button>$5</button><button>$10</button><button>$20</button><button>$50</button><button>$100</button></div>
+          <dl>
+            <div><dt>Sale total</dt><dd>$35.00</dd></div>
+            <div><dt>Tendered</dt><dd>$40.00</dd></div>
+            <div><dt>Change</dt><dd>$5.00</dd></div>
+          </dl>
+        </div>
+        <div>
+          <p class="eyebrow">Cash handling</p>
+          <h2>Built around Australian note denominations.</h2>
+          <p>Operators can press denominations repeatedly, build a running tendered total and see the change due without mental arithmetic during a busy sale.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="events">
+      <div class="container section-heading light">
+        <p class="eyebrow">Events and end-of-day</p>
+        <h2>Support for trading days that do not always end neatly.</h2>
+        <p>StamPOS can evolve cash-up and end-of-day workflows so multi-day events can be counted and reconciled without forcing a final event closure too early.</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container cta-panel">
+        <div>
+          <p class="eyebrow">Next step</p>
+          <h2>Ready for screenshots, downloads and launch content.</h2>
+          <p>This public website repo contains only static marketing content. The private StamPOS application code remains separate.</p>
+        </div>
+        <a class="button button-primary" href="mailto:hello@example.com">Contact StamPOS</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; <span id="year"></span> StamPOS. All rights reserved.</p>
+      <p>Offline-first POS for real-world selling.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
