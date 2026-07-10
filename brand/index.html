@@ -5,37 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="StamPOS brand guide, design principles, colours and product voice.">
   <title>Brand Guide | StamPOS</title>
+  <link rel="canonical" href="https://stampos.com.au/brand/">
   <link rel="icon" type="image/svg+xml" href="../assets/icons/stampos-icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav container" aria-label="Primary navigation">
       <a class="brand" href="../"><span class="brand-mark" aria-hidden="true"><img src="../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
-      <ul class="nav-links"><li><a href="../">Home</a></li><li><a href="../docs/">Docs</a></li><li><a href="../roadmap/">Roadmap</a></li></ul>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+      <ul class="nav-links" id="primary-menu"><li><a href="../">Home</a></li><li><a href="../docs/">Docs</a></li><li><a href="../roadmap/">Roadmap</a></li><li><a href="../releases/">Releases</a></li><li><a href="../brand/">Brand</a></li></ul>
     </nav>
   </header>
   <main>
-    <section class="hero section-dark subpage-hero">
-      <div class="container narrow-copy">
-        <p class="eyebrow">Brand system</p>
-        <h1>Practical. Reliable. Built for the counter.</h1>
-        <p class="hero-text">StamPOS should feel modern and commercial without losing its purpose: helping operators complete sales quickly, safely and with less stress.</p>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container docs-grid">
-        <article class="doc-card"><h2>Core idea</h2><p><strong>A practical POS that gets out of the operator's way.</strong></p><p>The brand should avoid vague SaaS language. Every visual and sentence should support speed, clarity, offline confidence and real-world deployment.</p></article>
-        <article class="doc-card"><h2>Colour palette</h2><div class="swatches"><span style="--swatch:#13283A">Navy<br>#13283A</span><span style="--swatch:#19A974">Green<br>#19A974</span><span style="--swatch:#FFB49D">Coral<br>#FFB49D</span><span style="--swatch:#02A9E6">Tile blue</span><span style="--swatch:#F04414">Tile orange</span><span style="--swatch:#B93DCC">Tile purple</span></div></article>
-        <article class="doc-card"><h2>Voice</h2><p>Use plain, confident wording. Prefer "Works offline", "Large touch targets", "Unknown is not declined", and "Technician tools included" over hype.</p></article>
-        <article class="doc-card"><h2>Design rules</h2><p>Lead with screenshots and real workflows. Use dark product sections, bright sales tiles, green primary actions, rounded panels and concise operator-focused text.</p></article>
-      </div>
-    </section>
+    <section class="hero section-dark subpage-hero"><div class="container narrow-copy"><p class="eyebrow">Brand system</p><h1>Practical. Reliable. Built for the counter.</h1><p class="hero-text">StamPOS should feel modern and commercial without losing its purpose: helping operators complete sales quickly, safely and with less stress.</p></div></section>
+    <section class="section"><div class="container docs-grid">
+      <article class="doc-card"><h2>Core idea</h2><p><strong>A practical POS that gets out of the operator's way.</strong></p><p>The brand should avoid vague SaaS language. Every visual and sentence should support speed, clarity, offline confidence and real-world deployment.</p></article>
+      <article class="doc-card"><h2>Colour palette</h2><div class="swatches"><span style="--swatch:#13283A">Navy<br>#13283A</span><span style="--swatch:#19A974">Green<br>#19A974</span><span style="--swatch:#FFB49D">Coral<br>#FFB49D</span><span style="--swatch:#02A9E6">Tile blue</span><span style="--swatch:#F04414">Tile orange</span><span style="--swatch:#B93DCC">Tile purple</span></div></article>
+      <article class="doc-card"><h2>Voice</h2><p>Use plain, confident wording. Prefer “Works offline”, “Large touch targets”, “Unknown is not declined”, and “Technician tools included” over hype.</p></article>
+      <article class="doc-card"><h2>Design rules</h2><p>Lead with screenshots and real workflows. Use dark product sections, bright sales tiles, green primary actions, rounded panels and concise operator-focused text.</p></article>
+    </div></section>
   </main>
-  <footer class="site-footer"><div class="container footer-grid"><p>&copy; <span id="year"></span> StamPOS.</p><p>Brand guide</p></div></footer>
+  <footer class="site-footer"><div class="container footer-grid"><p>&copy; <span id="year"></span> StamPOS.</p><nav class="footer-links"><a href="../">Home</a><a href="../docs/">Docs</a><a href="../roadmap/">Roadmap</a><a href="../releases/">Releases</a><a href="../brand/">Brand</a></nav></div></footer>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
