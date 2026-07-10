@@ -14,7 +14,13 @@
   <link rel="stylesheet" href="../assets/css/pages.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav container"><a class="brand" href="../"><span class="brand-mark"><img src="../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a><ul class="nav-links"><li><a href="../">Home</a></li><li><a href="../docs/">Docs</a></li><li><a href="../roadmap/">Roadmap</a></li><li><a href="../brand/">Brand</a></li></ul></nav></header>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="../"><span class="brand-mark"><img src="../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+      <ul class="nav-links" id="primary-menu"><li><a href="../">Home</a></li><li><a href="../docs/">Docs</a></li><li><a href="../roadmap/">Roadmap</a></li><li><a href="../releases/">Releases</a></li><li><a href="../brand/">Brand</a></li></ul>
+    </nav>
+  </header>
   <main>
     <section class="hero section-dark subpage-hero"><div class="container narrow-copy"><p class="eyebrow">Release notes</p><h1>Follow StamPOS as it moves toward 1.0.</h1><p class="hero-text">Public release notes will summarise meaningful operator, payment, reporting and deployment improvements without exposing the private source repository.</p></div></section>
     <section class="section"><div class="container release-list">
@@ -23,7 +29,7 @@
       <article class="release-card"><header><div><span class="doc-status planned">Future milestone</span><h2>StamPOS 1.0</h2></div><time>After field validation</time></header><ul><li>Customer-ready Windows installer.</li><li>Validated receipt printer and EFTPOS deployment guidance.</li><li>Complete operator and technician documentation.</li><li>Stable release and support process.</li></ul></article>
     </div></section>
   </main>
-  <footer class="site-footer"><div class="container footer-grid"><p>&copy; <span id="year"></span> StamPOS.</p><nav class="footer-links"><a href="../">Home</a><a href="../docs/">Docs</a><a href="../roadmap/">Roadmap</a><a href="../brand/">Brand</a></nav></div></footer>
+  <footer class="site-footer"><div class="container footer-grid"><p>&copy; <span id="year"></span> StamPOS.</p><nav class="footer-links"><a href="../">Home</a><a href="../docs/">Docs</a><a href="../roadmap/">Roadmap</a><a href="../releases/">Releases</a><a href="../brand/">Brand</a></nav></div></footer>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
