@@ -1,5 +1,23 @@
+const isSubpage = location.pathname !== '/' && !location.pathname.endsWith('/StamPOS-Website/');
+const root = isSubpage ? '../' : '';
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
+
+if (navLinks) {
+  const utilityLinks = [
+    ['Downloads', `${root}downloads/`],
+    ['Support', `${root}support/`],
+    ['Contact', `${root}contact/`]
+  ];
+  utilityLinks.forEach(([label, href]) => {
+    if (![...navLinks.querySelectorAll('a')].some((link) => link.textContent.trim() === label)) {
+      const item = document.createElement('li');
+      item.innerHTML = `<a href="${href}">${label}</a>`;
+      const cta = navLinks.querySelector('.nav-cta')?.closest('li');
+      cta ? navLinks.insertBefore(item, cta) : navLinks.appendChild(item);
+    }
+  });
+}
 
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
@@ -19,11 +37,9 @@ if (year) year.textContent = new Date().getFullYear();
 
 const footer = document.querySelector('.site-footer .container');
 if (footer && !footer.querySelector('.legal-footer')) {
-  const isSubpage = location.pathname !== '/' && !location.pathname.endsWith('/StamPOS-Website/');
-  const root = isSubpage ? '../' : '';
   const legal = document.createElement('div');
   legal.className = 'legal-footer';
-  legal.innerHTML = `<span>ABN 91 191 123 951</span><nav aria-label="Legal navigation"><a href="${root}privacy/">Privacy</a><a href="${root}terms/">Terms</a><a href="${root}legal/">Copyright & legal</a></nav>`;
+  legal.innerHTML = `<span>ABN 91 191 123 951</span><nav aria-label="Footer navigation"><a href="${root}downloads/">Downloads</a><a href="${root}support/">Support</a><a href="${root}contact/">Contact</a><a href="${root}privacy/">Privacy</a><a href="${root}terms/">Terms</a><a href="${root}legal/">Copyright & legal</a></nav>`;
   footer.appendChild(legal);
 }
 
