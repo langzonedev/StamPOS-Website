@@ -5,6 +5,8 @@ const navLinks = document.querySelector('.nav-links');
 
 if (navLinks) {
   const utilityLinks = [
+    ['Hardware', `${root}hardware/`],
+    ['Payments', `${root}payments/`],
     ['Downloads', `${root}downloads/`],
     ['Support', `${root}support/`],
     ['Contact', `${root}contact/`]
@@ -32,16 +34,23 @@ if (navToggle && navLinks) {
   }));
 }
 
+const footer = document.querySelector('.site-footer .container');
+if (footer) {
+  footer.className = 'container unified-footer';
+  footer.innerHTML = `
+    <div class="footer-brand-block">
+      <a class="brand" href="${root}"><span class="brand-mark"><img src="${root}assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
+      <p>Practical point of sale software for events, counters and small businesses.</p>
+      <span>ABN 91 191 123 951</span>
+    </div>
+    <div class="footer-column"><strong>Product</strong><a href="${root}hardware/">Hardware</a><a href="${root}payments/">Payments</a><a href="${root}downloads/">Downloads</a><a href="${root}releases/">Release notes</a></div>
+    <div class="footer-column"><strong>Resources</strong><a href="${root}docs/">Documentation</a><a href="${root}support/">Support</a><a href="${root}roadmap/">Roadmap</a><a href="${root}brand/">Brand</a></div>
+    <div class="footer-column"><strong>Company</strong><a href="${root}contact/">Contact</a><a href="${root}privacy/">Privacy</a><a href="${root}terms/">Terms</a><a href="${root}legal/">Copyright & legal</a></div>
+    <div class="footer-bottom"><span>&copy; <span id="year"></span> StamPOS. All rights reserved.</span><span>stampos.com.au</span></div>`;
+}
+
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
-
-const footer = document.querySelector('.site-footer .container');
-if (footer && !footer.querySelector('.legal-footer')) {
-  const legal = document.createElement('div');
-  legal.className = 'legal-footer';
-  legal.innerHTML = `<span>ABN 91 191 123 951</span><nav aria-label="Footer navigation"><a href="${root}downloads/">Downloads</a><a href="${root}support/">Support</a><a href="${root}contact/">Contact</a><a href="${root}privacy/">Privacy</a><a href="${root}terms/">Terms</a><a href="${root}legal/">Copyright & legal</a></nav>`;
-  footer.appendChild(legal);
-}
 
 const saleTotal = 35;
 let tendered = 0;
@@ -67,12 +76,19 @@ function updateDemo() {
 cashButtons.forEach((button) => button.addEventListener('click', () => { if (!paymentComplete) { tendered += Number(button.dataset.cash || 0); updateDemo(); } }));
 if (payButton) payButton.addEventListener('click', () => {
   if (tendered < saleTotal || paymentComplete) return;
-  payButton.disabled = true; payButton.textContent = 'Processing…';
+  payButton.disabled = true;
+  payButton.textContent = 'Processing…';
   if (statusEl) { statusEl.textContent = 'Recording payment…'; statusEl.className = 'payment-status processing'; }
   window.setTimeout(() => {
-    paymentComplete = true; payButton.textContent = 'Payment accepted';
+    paymentComplete = true;
+    payButton.textContent = 'Payment accepted';
     if (statusEl) { statusEl.textContent = `Payment accepted. Return ${formatCurrency(tendered - saleTotal)} change.`; statusEl.className = 'payment-status approved'; }
   }, 900);
 });
-if (resetButton) resetButton.addEventListener('click', () => { tendered = 0; paymentComplete = false; if (payButton) payButton.textContent = 'Complete payment'; updateDemo(); });
+if (resetButton) resetButton.addEventListener('click', () => {
+  tendered = 0;
+  paymentComplete = false;
+  if (payButton) payButton.textContent = 'Complete payment';
+  updateDemo();
+});
 updateDemo();
