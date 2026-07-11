@@ -2,7 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://stampos.com.au/</loc><priority>1.0</priority></url>
   <url><loc>https://stampos.com.au/docs/</loc><priority>0.8</priority></url>
+  <url><loc>https://stampos.com.au/downloads/</loc><priority>0.8</priority></url>
+  <url><loc>https://stampos.com.au/support/</loc><priority>0.8</priority></url>
+  <url><loc>https://stampos.com.au/contact/</loc><priority>0.7</priority></url>
   <url><loc>https://stampos.com.au/roadmap/</loc><priority>0.7</priority></url>
   <url><loc>https://stampos.com.au/releases/</loc><priority>0.7</priority></url>
   <url><loc>https://stampos.com.au/brand/</loc><priority>0.5</priority></url>
+  <url><loc>https://stampos.com.au/privacy/</loc><priority>0.3</priority></url>
+  <url><loc>https://stampos.com.au/terms/</loc><priority>0.3</priority></url>
+  <url><loc>https://stampos.com.au/legal/</loc><priority>0.3</priority></url>
 </urlset>
