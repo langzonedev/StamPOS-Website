@@ -1,10 +1,20 @@
 const isSubpage = location.pathname !== '/' && !location.pathname.endsWith('/StamPOS-Website/');
-const root = isSubpage ? '../' : '';
+const depth = location.pathname.split('/').filter(Boolean).length;
+const root = depth >= 2 && location.pathname.includes('/docs/') ? '../../' : (isSubpage ? '../' : '');
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 
+const header = document.querySelector('.site-header');
+if (header && !document.querySelector('.beta-notice')) {
+  const notice = document.createElement('div');
+  notice.className = 'beta-notice';
+  notice.innerHTML = `<div class="container"><strong>Private beta:</strong> StamPOS is under controlled testing and payment accreditation is still in progress. It is not yet available for general production use. <a href="${root}beta/">Read the release-status notice</a>.</div>`;
+  header.insertAdjacentElement('afterend', notice);
+}
+
 if (navLinks) {
   const utilityLinks = [
+    ['Private beta', `${root}beta/`],
     ['Hardware', `${root}hardware/`],
     ['Payments', `${root}payments/`],
     ['Downloads', `${root}downloads/`],
@@ -40,14 +50,14 @@ if (footer) {
   footer.innerHTML = `
     <div class="footer-brand-block">
       <a class="brand" href="${root}"><span class="brand-mark"><img src="${root}assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
-      <p>Practical point of sale software for events, counters and small businesses.</p>
+      <p>Practical point of sale software for events, counters and small businesses. Currently in controlled private beta.</p>
       <a href="mailto:stampos@outlook.com">stampos@outlook.com</a>
       <span>ABN 91 191 123 951</span>
     </div>
-    <div class="footer-column"><strong>Product</strong><a href="${root}hardware/">Hardware</a><a href="${root}payments/">Payments</a><a href="${root}downloads/">Downloads</a><a href="${root}releases/">Release notes</a></div>
-    <div class="footer-column"><strong>Resources</strong><a href="${root}docs/">Documentation</a><a href="${root}support/">Support</a><a href="${root}roadmap/">Roadmap</a><a href="${root}brand/">Brand</a></div>
+    <div class="footer-column"><strong>Product</strong><a href="${root}beta/">Private beta</a><a href="${root}hardware/">Hardware</a><a href="${root}payments/">Payments</a><a href="${root}downloads/">Downloads</a><a href="${root}releases/">Release notes</a></div>
+    <div class="footer-column"><strong>Resources</strong><a href="${root}docs/">Documentation</a><a href="${root}docs/beta-testing/">Beta testing documents</a><a href="${root}support/">Support</a><a href="${root}roadmap/">Roadmap</a><a href="${root}brand/">Brand</a></div>
     <div class="footer-column"><strong>Company</strong><a href="${root}contact/">Contact</a><a href="${root}privacy/">Privacy</a><a href="${root}terms/">Terms</a><a href="${root}legal/">Copyright & legal</a></div>
-    <div class="footer-bottom"><span>&copy; <span id="year"></span> StamPOS. All rights reserved.</span><span>stampos.com.au</span></div>`;
+    <div class="footer-bottom"><span>&copy; <span id="year"></span> StamPOS. All rights reserved.</span><span>Private beta - not for general production use</span></div>`;
 }
 
 const year = document.querySelector('#year');
@@ -70,7 +80,7 @@ function updateDemo() {
   changeEl.textContent = formatCurrency(Math.max(0, tendered - saleTotal));
   if (payButton) payButton.disabled = tendered < saleTotal || paymentComplete;
   if (statusEl && !paymentComplete) {
-    statusEl.textContent = tendered >= saleTotal ? 'Tender received. Ready to complete payment.' : `Add ${formatCurrency(saleTotal - tendered)} more to complete the sale.`;
+    statusEl.textContent = tendered >= saleTotal ? 'Demo tender received. Ready to simulate completion.' : `Add ${formatCurrency(saleTotal - tendered)} more to the website demonstration.`;
     statusEl.className = 'payment-status';
   }
 }
@@ -78,18 +88,18 @@ cashButtons.forEach((button) => button.addEventListener('click', () => { if (!pa
 if (payButton) payButton.addEventListener('click', () => {
   if (tendered < saleTotal || paymentComplete) return;
   payButton.disabled = true;
-  payButton.textContent = 'Processing…';
-  if (statusEl) { statusEl.textContent = 'Recording payment…'; statusEl.className = 'payment-status processing'; }
+  payButton.textContent = 'Simulating…';
+  if (statusEl) { statusEl.textContent = 'Simulating payment recording - no transaction is processed.'; statusEl.className = 'payment-status processing'; }
   window.setTimeout(() => {
     paymentComplete = true;
-    payButton.textContent = 'Payment accepted';
-    if (statusEl) { statusEl.textContent = `Payment accepted. Return ${formatCurrency(tendered - saleTotal)} change.`; statusEl.className = 'payment-status approved'; }
+    payButton.textContent = 'Demo complete';
+    if (statusEl) { statusEl.textContent = `Website demonstration complete. Simulated change: ${formatCurrency(tendered - saleTotal)}.`; statusEl.className = 'payment-status approved'; }
   }, 900);
 });
 if (resetButton) resetButton.addEventListener('click', () => {
   tendered = 0;
   paymentComplete = false;
-  if (payButton) payButton.textContent = 'Complete payment';
+  if (payButton) payButton.textContent = 'Complete demo';
   updateDemo();
 });
 updateDemo();
