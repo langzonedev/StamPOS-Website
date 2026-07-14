@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://stampos.com.au/</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://stampos.com.au/beta/</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://stampos.com.au/payments/</loc><lastmod>2026-07-11</lastmod></url>
+  <url><loc>https://stampos.com.au/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://stampos.com.au/beta/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://stampos.com.au/payments/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://stampos.com.au/hardware/</loc><lastmod>2026-07-11</lastmod></url>
-  <url><loc>https://stampos.com.au/docs/</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://stampos.com.au/docs/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://stampos.com.au/docs/getting-started/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://stampos.com.au/docs/hardware/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://stampos.com.au/docs/payments/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://stampos.com.au/docs/products/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://stampos.com.au/docs/events-reports/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://stampos.com.au/docs/technician/</loc><lastmod>2026-07-14</lastmod></url>
+  <url><loc>https://stampos.com.au/docs/release-readiness/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://stampos.com.au/docs/beta-testing/</loc><lastmod>2026-07-13</lastmod></url>
   <url><loc>https://stampos.com.au/docs/cloud-pairing/</loc><lastmod>2026-07-11</lastmod></url>
   <url><loc>https://stampos.com.au/downloads/</loc><lastmod>2026-07-13</lastmod></url>
