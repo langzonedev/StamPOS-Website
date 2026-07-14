@@ -8,13 +8,13 @@ const header = document.querySelector('.site-header');
 if (header && !document.querySelector('.beta-notice')) {
   const notice = document.createElement('div');
   notice.className = 'beta-notice';
-  notice.innerHTML = `<div class="container"><strong>Private beta:</strong> StamPOS is under controlled testing and payment accreditation is still in progress. It is not yet available for general production use. <a href="${root}beta/">Read the release-status notice</a>.</div>`;
+  notice.innerHTML = `<div class="container"><strong>Accredited pre-release:</strong> StamPOS has completed Linkly accreditation and is now progressing through controlled user testing before general 1.0 release. <a href="${root}beta/">Read the release-status notice</a>.</div>`;
   header.insertAdjacentElement('afterend', notice);
 }
 
 if (navLinks) {
   const utilityLinks = [
-    ['Private beta', `${root}beta/`],
+    ['Pilot status', `${root}beta/`],
     ['Hardware', `${root}hardware/`],
     ['Payments', `${root}payments/`],
     ['Downloads', `${root}downloads/`],
@@ -50,14 +50,14 @@ if (footer) {
   footer.innerHTML = `
     <div class="footer-brand-block">
       <a class="brand" href="${root}"><span class="brand-mark"><img src="${root}assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
-      <p>Practical point of sale software for events, counters and small businesses. Currently in controlled private beta.</p>
+      <p>Practical point of sale software for events, counters and small businesses. Linkly accredited and progressing through controlled user validation.</p>
       <a href="mailto:stampos@outlook.com">stampos@outlook.com</a>
       <span>ABN 91 191 123 951</span>
     </div>
-    <div class="footer-column"><strong>Product</strong><a href="${root}beta/">Private beta</a><a href="${root}hardware/">Hardware</a><a href="${root}payments/">Payments</a><a href="${root}downloads/">Downloads</a><a href="${root}releases/">Release notes</a></div>
-    <div class="footer-column"><strong>Resources</strong><a href="${root}docs/">Documentation</a><a href="${root}docs/beta-testing/">Beta testing documents</a><a href="${root}support/">Support</a><a href="${root}roadmap/">Roadmap</a><a href="${root}brand/">Brand</a></div>
+    <div class="footer-column"><strong>Product</strong><a href="${root}beta/">Pilot status</a><a href="${root}hardware/">Hardware</a><a href="${root}payments/">Payments</a><a href="${root}downloads/">Downloads</a><a href="${root}releases/">Release notes</a></div>
+    <div class="footer-column"><strong>Resources</strong><a href="${root}docs/">Documentation</a><a href="${root}docs/release-readiness/">Release readiness</a><a href="${root}docs/beta-testing/">Testing documents</a><a href="${root}support/">Support</a><a href="${root}roadmap/">Roadmap</a><a href="${root}brand/">Brand</a></div>
     <div class="footer-column"><strong>Company</strong><a href="${root}contact/">Contact</a><a href="${root}privacy/">Privacy</a><a href="${root}terms/">Terms</a><a href="${root}legal/">Copyright & legal</a></div>
-    <div class="footer-bottom"><span>&copy; <span id="year"></span> StamPOS. All rights reserved.</span><span>Private beta - not for general production use</span></div>`;
+    <div class="footer-bottom"><span>&copy; <span id="year"></span> StamPOS. All rights reserved.</span><span>Accredited pre-release - controlled user testing in progress</span></div>`;
 }
 
 const year = document.querySelector('#year');
