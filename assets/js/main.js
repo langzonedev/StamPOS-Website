@@ -8,27 +8,29 @@ const header = document.querySelector('.site-header');
 if (header && !document.querySelector('.beta-notice')) {
   const notice = document.createElement('div');
   notice.className = 'beta-notice';
-  notice.innerHTML = `<div class="container"><strong>Accredited pre-release:</strong> StamPOS has completed Linkly accreditation and is now progressing through controlled user testing before general 1.0 release. <a href="${root}beta/">Read the release-status notice</a>.</div>`;
+  notice.innerHTML = `<div class="container"><strong>Controlled 1.0 release:</strong> StamPOS 1.0.0 is the current controlled release baseline. Public downloads remain gated while user validation and deployment controls are completed. <a href="${root}beta/">Read the release-status notice</a>.</div>`;
   header.insertAdjacentElement('afterend', notice);
 }
 
 if (navLinks) {
-  const utilityLinks = [
-    ['Pilot status', `${root}beta/`],
-    ['Hardware', `${root}hardware/`],
-    ['Payments', `${root}payments/`],
-    ['Downloads', `${root}downloads/`],
-    ['Support', `${root}support/`],
-    ['Contact', `${root}contact/`]
+  const pagePath = location.pathname.replace(/\/index\.html$/, '/');
+  const navItems = [
+    ['Product', isSubpage ? `${root}#product` : '#product', pagePath === '/' ? 'product' : ''],
+    ['Payments', isSubpage ? `${root}#payments` : '#payments', pagePath === '/' ? 'payments' : ''],
+    ['Demo', isSubpage ? `${root}#demo` : '#demo', pagePath === '/' ? 'demo' : ''],
+    ['Docs', `${root}docs/`, '/docs/'],
+    ['Roadmap', `${root}roadmap/`, '/roadmap/'],
+    ['Releases', `${root}releases/`, '/releases/'],
+    ['Support', `${root}support/`, '/support/'],
+    ['Downloads', `${root}downloads/`, '/downloads/', 'nav-cta']
   ];
-  utilityLinks.forEach(([label, href]) => {
-    if (![...navLinks.querySelectorAll('a')].some((link) => link.textContent.trim() === label)) {
-      const item = document.createElement('li');
-      item.innerHTML = `<a href="${href}">${label}</a>`;
-      const cta = navLinks.querySelector('.nav-cta')?.closest('li');
-      cta ? navLinks.insertBefore(item, cta) : navLinks.appendChild(item);
-    }
-  });
+
+  navLinks.innerHTML = navItems.map(([label, href, match, className]) => {
+    const isCurrent = match && pagePath.endsWith(match);
+    const classAttr = className ? ` class="${className}"` : '';
+    const currentAttr = isCurrent ? ' aria-current="page"' : '';
+    return `<li><a${classAttr} href="${href}"${currentAttr}>${label}</a></li>`;
+  }).join('');
 }
 
 if (navToggle && navLinks) {
@@ -50,14 +52,14 @@ if (footer) {
   footer.innerHTML = `
     <div class="footer-brand-block">
       <a class="brand" href="${root}"><span class="brand-mark"><img src="${root}assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
-      <p>Practical point of sale software for events, counters and small businesses. Linkly accredited and progressing through controlled user validation.</p>
+      <p>Practical point of sale software for events, counters and small businesses. StamPOS 1.0.0 is distributed through controlled validation before general availability.</p>
       <a href="mailto:stampos@outlook.com">stampos@outlook.com</a>
       <span>ABN 91 191 123 951</span>
     </div>
     <div class="footer-column"><strong>Product</strong><a href="${root}beta/">Pilot status</a><a href="${root}hardware/">Hardware</a><a href="${root}payments/">Payments</a><a href="${root}downloads/">Downloads</a><a href="${root}releases/">Release notes</a></div>
     <div class="footer-column"><strong>Resources</strong><a href="${root}docs/">Documentation</a><a href="${root}docs/release-readiness/">Release readiness</a><a href="${root}docs/beta-testing/">Testing documents</a><a href="${root}support/">Support</a><a href="${root}roadmap/">Roadmap</a><a href="${root}brand/">Brand</a></div>
     <div class="footer-column"><strong>Company</strong><a href="${root}contact/">Contact</a><a href="${root}privacy/">Privacy</a><a href="${root}terms/">Terms</a><a href="${root}legal/">Copyright & legal</a></div>
-    <div class="footer-bottom"><span>&copy; <span id="year"></span> StamPOS. All rights reserved.</span><span>Accredited pre-release - controlled user testing in progress</span></div>`;
+    <div class="footer-bottom"><span>&copy; <span id="year"></span> StamPOS. All rights reserved.</span><span>Controlled 1.0.0 validation and deployment planning in progress</span></div>`;
 }
 
 const year = document.querySelector('#year');
@@ -88,7 +90,7 @@ cashButtons.forEach((button) => button.addEventListener('click', () => { if (!pa
 if (payButton) payButton.addEventListener('click', () => {
   if (tendered < saleTotal || paymentComplete) return;
   payButton.disabled = true;
-  payButton.textContent = 'Simulating…';
+  payButton.textContent = 'Simulating...';
   if (statusEl) { statusEl.textContent = 'Simulating payment recording - no transaction is processed.'; statusEl.className = 'payment-status processing'; }
   window.setTimeout(() => {
     paymentComplete = true;
