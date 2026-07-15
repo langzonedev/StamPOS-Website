@@ -54,7 +54,7 @@ if (footer) {
       <a class="brand" href="${root}"><span class="brand-mark"><img src="${root}assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
       <p>Practical point of sale software for events, counters and small businesses. StamPOS 1.0.0 is distributed through controlled validation before general availability.</p>
       <a href="mailto:stampos@outlook.com">stampos@outlook.com</a>
-      <span>ABN 91 191 123 951</span>
+      <a class="footer-maker" href="https://langsystems.com.au/">Made by Lang Systems</a>
     </div>
     <div class="footer-column"><strong>Product</strong><a href="${root}beta/">Pilot status</a><a href="${root}hardware/">Hardware</a><a href="${root}payments/">Payments</a><a href="${root}downloads/">Downloads</a><a href="${root}releases/">Release notes</a></div>
     <div class="footer-column"><strong>Resources</strong><a href="${root}docs/">Documentation</a><a href="${root}docs/release-readiness/">Release readiness</a><a href="${root}docs/beta-testing/">Testing documents</a><a href="${root}support/">Support</a><a href="${root}roadmap/">Roadmap</a><a href="${root}brand/">Brand</a></div>

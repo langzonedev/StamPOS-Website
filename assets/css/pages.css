@@ -33,6 +33,8 @@ a.doc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); 
 .footer-brand-block { display: grid; gap: 14px; max-width: 360px; }
 .footer-brand-block .brand { width: fit-content; }
 .footer-brand-block p, .footer-brand-block > span { color: rgba(255,255,255,.66); }
+.footer-maker { width: fit-content; color: rgba(255,255,255,.64); font-weight: 700; text-decoration: underline; text-decoration-color: rgba(255,255,255,.22); text-underline-offset: 4px; }
+.footer-maker:hover, .footer-maker:focus-visible { color: #fff; text-decoration-color: rgba(255,255,255,.72); }
 .footer-column { display: grid; gap: 11px; align-content: start; }
 .footer-column strong { color: #fff; margin-bottom: 4px; }
 .footer-column a { color: rgba(255,255,255,.68); }
