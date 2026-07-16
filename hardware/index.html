@@ -1,1 +1,110 @@
-<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Hardware guidance for StamPOS terminals, printers, drawers and payment devices."><title>Hardware | StamPOS</title><link rel="canonical" href="https://stampos.com.au/hardware/"><link rel="icon" type="image/svg+xml" href="../assets/icons/stampos-icon.svg"><link rel="stylesheet" href="../assets/css/styles.css"><link rel="stylesheet" href="../assets/css/pages.css"></head><body><header class="site-header"><nav class="nav container" aria-label="Primary navigation"><a class="brand" href="../"><span class="brand-mark"><img src="../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button><ul class="nav-links" id="primary-menu"><li><a href="../">Home</a></li><li><a href="../docs/">Docs</a></li><li><a href="../roadmap/">Roadmap</a></li><li><a href="../releases/">Releases</a></li><li><a href="../brand/">Brand</a></li></ul></nav></header><main><section class="hero section-dark subpage-hero"><div class="container narrow-copy"><p class="eyebrow">Hardware</p><h1>Designed for practical Windows POS setups.</h1><p class="hero-text">StamPOS is intended to work with standard commercial hardware while keeping setup and support understandable.</p></div></section><section class="section"><div class="container docs-grid"><article class="doc-card"><span class="doc-status live">Core platform</span><h2>Windows terminal</h2><p>A Windows 11 PC, touchscreen terminal or laptop can run StamPOS. Final production requirements will be published with the first supported installer.</p></article><article class="doc-card"><span class="doc-status progress">Validated path</span><h2>Receipt printers</h2><p>StamPOS supports Windows printing and direct network printing workflows. Star TSP100-series testing is part of the current deployment work.</p></article><article class="doc-card"><span class="doc-status planned">Supported setup</span><h2>Cash drawers</h2><p>Cash-drawer support will follow the selected receipt-printer connection and command path, with deployment guidance published per supported model.</p></article><article class="doc-card"><span class="doc-status progress">Integration</span><h2>EFTPOS terminals</h2><p>Linkly provides the first payment-terminal integration path. Compatible terminal availability depends on the merchant's acquirer and Linkly deployment.</p></article><article class="doc-card"><span class="doc-status planned">Optional</span><h2>Barcode scanners</h2><p>USB scanners that present as keyboard input are a natural future extension where product workflows require barcode entry.</p></article><article class="doc-card"><span class="doc-status planned">Future</span><h2>Customer displays</h2><p>Secondary displays and customer-facing sale information may be added where they improve the event and counter experience.</p></article></div></section><section class="section section-muted"><div class="container narrow-copy"><p class="eyebrow">Compatibility approach</p><h2>Support is based on tested combinations, not vague claims.</h2><p>Before public release, StamPOS will publish a hardware matrix showing the Windows version, printer model, connection type, payment path and any required setup notes for each validated configuration.</p></div></section></main><footer class="site-footer"><div class="container"></div></footer><script src="../assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Minimum hardware requirements and tested support matrix for StamPOS terminals, printers, drawers and payment devices.">
+  <title>Hardware and Minimum Specs | StamPOS</title>
+  <link rel="canonical" href="https://stampos.com.au/hardware/">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/stampos-icon.svg">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary navigation">
+    <a class="brand" href="../"><span class="brand-mark"><img src="../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+    <ul class="nav-links" id="primary-menu"><li><a href="../">Home</a></li><li><a href="../docs/">Docs</a></li><li><a href="../roadmap/">Roadmap</a></li><li><a href="../releases/">Releases</a></li><li><a href="../brand/">Brand</a></li></ul>
+  </nav>
+</header>
+<main>
+  <section class="hero section-dark subpage-hero">
+    <div class="container narrow-copy">
+      <p class="eyebrow">Hardware and support</p>
+      <h1>Minimum specs and tested configurations.</h1>
+      <p class="hero-text">StamPOS is intended for practical Windows POS workstations. Support is tracked by tested hardware, printer, payment and software-version combinations rather than broad compatibility claims.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Minimum specs</p>
+        <h2>Current controlled 1.0.0 baseline.</h2>
+        <p>These are starting requirements for validation and pilot planning. The supported list will tighten as more physical combinations are tested.</p>
+      </div>
+      <div class="docs-grid">
+        <article class="doc-card"><span class="doc-status live">Operating system</span><h2>Windows 11 Pro tested</h2><p>Current validation has been performed on Windows 11 Pro in both virtual machine and physical hardware environments. 64-bit Windows 10/11 remains the packaging target until validation narrows the supported list.</p></article>
+        <article class="doc-card"><span class="doc-status live">Memory and storage</span><h2>4 GB RAM minimum</h2><p>Use 4 GB RAM and 2 GB free local disk as the minimum starting point. 8 GB RAM, SSD storage and at least 10 GB free space are recommended for event-day headroom, logs, backups and updates.</p></article>
+        <article class="doc-card"><span class="doc-status live">Display and input</span><h2>Touch-friendly display</h2><p>A touchscreen terminal or Windows PC with mouse input can be used. Plan for at least 1366 x 768 resolution; larger touch displays are recommended for fast product-tile operation.</p></article>
+        <article class="doc-card"><span class="doc-status progress">Receipt printing</span><h2>Star TSP100 path</h2><p>Star TSP100-series receipt-printer testing is part of the current validated path. Printer driver, paper, cutter and cash-drawer pulse settings should be confirmed for each site.</p></article>
+        <article class="doc-card"><span class="doc-status progress">Payments</span><h2>Linkly first</h2><p>Linkly is the first payment-terminal provider path. Card transactions require working internet access, merchant/acquirer onboarding and the correct Linkly production or sandbox credentials.</p></article>
+        <article class="doc-card"><span class="doc-status planned">Peripherals</span><h2>Record each device</h2><p>Cash drawers, scanners, customer displays and other peripherals should be added to the support matrix only after the actual connection path and StamPOS version have been tested.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Support matrix</p>
+        <h2>Tested combinations are recorded from the beginning.</h2>
+        <p>Exact model numbers and hardware specifications should be added as they are confirmed. The matrix below starts with the known Windows 11 Pro VM and H&amp;L touchscreen hardware paths.</p>
+      </div>
+      <div class="matrix-wrap" role="region" aria-label="StamPOS tested support matrix" tabindex="0">
+        <table class="support-table">
+          <thead>
+            <tr>
+              <th>Configuration</th>
+              <th>StamPOS version</th>
+              <th>Windows environment</th>
+              <th>Terminal hardware</th>
+              <th>Receipt printer</th>
+              <th>Payment provider</th>
+              <th>Status</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Internal VM validation</strong></td>
+              <td>1.0.0 controlled baseline</td>
+              <td>Windows 11 Pro VM</td>
+              <td>Virtual machine</td>
+              <td>Not a physical printer validation</td>
+              <td>Linkly sandbox / VirtualPinpad path where configured</td>
+              <td>Tested</td>
+              <td>Useful for installer, regression and payment-flow checks. Does not prove physical printer, drawer or touchscreen behaviour.</td>
+            </tr>
+            <tr>
+              <td><strong>H&amp;L touchscreen pilot hardware</strong></td>
+              <td>1.0.0 controlled baseline</td>
+              <td>Windows 11 Pro</td>
+              <td>H&amp;L touchscreen terminal, exact model/spec pending</td>
+              <td>Star TSP100-series receipt printer</td>
+              <td>Linkly payment path; production terminal details depend on merchant/acquirer setup</td>
+              <td>In validation</td>
+              <td>Record CPU, RAM, storage, screen size, printer connection type and any cash-drawer path once confirmed.</td>
+            </tr>
+            <tr>
+              <td><strong>Receipt-printer path</strong></td>
+              <td>1.0.0 controlled baseline</td>
+              <td>Windows 11 Pro</td>
+              <td>Windows POS terminal or PC</td>
+              <td>Star TSP100-series via supported Windows or network printing workflow</td>
+              <td>Independent of payment provider</td>
+              <td>In validation</td>
+              <td>Confirm paper width, cutter behaviour, print density, cash-drawer pulse settings and receipt reprint workflow per site.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="matrix-note">For the versioned documentation view, see the <a href="../docs/support-matrix/">support matrix guide</a>.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container"></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

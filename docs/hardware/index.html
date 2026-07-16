@@ -1,1 +1,61 @@
-<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="StamPOS hardware guidance for Windows terminals, receipt printers, cash drawers and EFTPOS."><title>Hardware Guide | StamPOS Documentation</title><link rel="canonical" href="https://stampos.com.au/docs/hardware/"><link rel="icon" href="../../assets/icons/stampos-icon.svg"><link rel="stylesheet" href="../../assets/css/styles.css"><link rel="stylesheet" href="../../assets/css/pages.css"></head><body><header class="site-header"><nav class="nav container"><a class="brand" href="../../"><span class="brand-mark"><img src="../../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button><ul class="nav-links" id="primary-menu"><li><a href="../">Docs</a></li><li><a href="../../hardware/">Hardware overview</a></li></ul></nav></header><main><section class="hero section-dark subpage-hero"><div class="container narrow-copy"><p class="eyebrow">Hardware</p><h1>Build a predictable and supportable StamPOS workstation.</h1><p class="hero-text">Use known hardware combinations, document every connection and validate the full sale-to-receipt workflow before an event.</p></div></section><section class="section"><div class="container legal-copy"><h2>Windows terminal</h2><p>Use a supported Windows 11 device with reliable storage, current security updates, a stable network connection where card payments are required and enough screen space for the touch interface. Disable unplanned sleep during trading while retaining appropriate screen-lock and security controls.</p><h2>Receipt printer</h2><p>Install the manufacturer-supported Windows driver where the selected printer workflow requires it. Confirm paper size, print density, character encoding, cash-drawer pulse settings and automatic cutting. Print a complete sample receipt rather than relying only on a Windows test page.</p><h2>Cash drawer</h2><p>Where the drawer connects through the receipt printer, verify the correct port and pulse configuration. Confirm that opening behaviour matches the intended workflow and that users cannot trigger the drawer outside authorised operations.</p><h2>Payment terminal</h2><p>For Linkly-connected EFTPOS, follow the approved pairing and merchant setup process. Record the logical terminal identity, device location and responsible merchant account. Do not reuse production credentials in demonstrations or unrelated test environments.</p><h2>Network</h2><p>Core StamPOS data is local, but connected card transactions require reliable access to the configured payment service. Test the actual event network, including firewall, DNS and captive-portal behaviour. Document the fallback procedure for a network outage.</p><h2>Pre-event readiness check</h2><p>Confirm power, charging, network, printer paper, spare paper, cash drawer, application version, backups, operator accounts, products, receipt details, payment logon and a controlled test transaction. Retain a simple equipment map showing which terminal, printer and payment device belong together.</p><h2>Supported-hardware status</h2><p>A device appearing technically compatible does not automatically mean it has been fully validated. Production deployments should use hardware combinations confirmed by StamPOS or tested under an agreed pilot plan.</p></div></section></main><footer class="site-footer"><div class="container"></div></footer><script src="../../assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="StamPOS hardware guidance for Windows terminals, receipt printers, cash drawers, EFTPOS and tested support matrix entries.">
+  <title>Hardware Guide | StamPOS Documentation</title>
+  <link rel="canonical" href="https://stampos.com.au/docs/hardware/">
+  <link rel="icon" href="../../assets/icons/stampos-icon.svg">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../../"><span class="brand-mark"><img src="../../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+    <ul class="nav-links" id="primary-menu"><li><a href="../">Docs</a></li><li><a href="../../hardware/">Hardware overview</a></li><li><a href="../support-matrix/">Support matrix</a></li></ul>
+  </nav>
+</header>
+<main>
+  <section class="hero section-dark subpage-hero">
+    <div class="container narrow-copy">
+      <p class="eyebrow">Hardware</p>
+      <h1>Build a predictable and supportable StamPOS workstation.</h1>
+      <p class="hero-text">Use known hardware combinations, document every connection and validate the full sale-to-receipt workflow before an event.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal-copy">
+      <h2>Minimum starting point</h2>
+      <p>For the StamPOS 1.0.0 controlled baseline, use a 64-bit Windows device with 4 GB RAM, 2 GB free local disk and a touch-friendly display of at least 1366 x 768. Windows 11 Pro is the current tested operating system for both VM and physical hardware validation. 8 GB RAM, SSD storage and at least 10 GB free space are recommended for event-day headroom.</p>
+
+      <h2>Windows terminal</h2>
+      <p>Use a supported Windows device with reliable storage, current security updates, a stable network connection where card payments are required and enough screen space for the touch interface. Disable unplanned sleep during trading while retaining appropriate screen-lock and security controls.</p>
+
+      <h2>Receipt printer</h2>
+      <p>Install the manufacturer-supported Windows driver where the selected printer workflow requires it. Confirm paper size, print density, character encoding, cash-drawer pulse settings and automatic cutting. Print a complete sample receipt rather than relying only on a Windows test page.</p>
+
+      <h2>Cash drawer</h2>
+      <p>Where the drawer connects through the receipt printer, verify the correct port and pulse configuration. Confirm that opening behaviour matches the intended workflow and that users cannot trigger the drawer outside authorised operations.</p>
+
+      <h2>Payment terminal</h2>
+      <p>For Linkly-connected EFTPOS, follow the approved pairing and merchant setup process. Record the logical terminal identity, device location and responsible merchant account. Do not reuse production credentials in demonstrations or unrelated test environments.</p>
+
+      <h2>Network</h2>
+      <p>Core StamPOS data is local, but connected card transactions require reliable access to the configured payment service. Test the actual event network, including firewall, DNS and captive-portal behaviour. Document the fallback procedure for a network outage.</p>
+
+      <h2>Pre-event readiness check</h2>
+      <p>Confirm power, charging, network, printer paper, spare paper, cash drawer, application version, backups, operator accounts, products, receipt details, payment logon and a controlled test transaction. Retain a simple equipment map showing which terminal, printer and payment device belong together.</p>
+
+      <h2>Supported-hardware status</h2>
+      <p>A device appearing technically compatible does not automatically mean it has been fully validated. Production deployments should use hardware combinations confirmed by StamPOS or tested under an agreed pilot plan. The current tested combinations are tracked in the <a href="../support-matrix/">support matrix</a>.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container"></div></footer>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>
