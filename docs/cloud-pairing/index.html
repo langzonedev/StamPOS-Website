@@ -19,7 +19,7 @@
     <nav class="nav container" aria-label="Primary navigation">
       <a class="brand" href="../../"><span class="brand-mark"><img src="../../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
-      <ul class="nav-links" id="primary-menu"><li><a href="../../">Home</a></li><li><a href="../">Docs</a></li><li><a href="../../roadmap/">Roadmap</a></li><li><a href="../../releases/">Releases</a></li><li><a href="../../brand/">Brand</a></li></ul>
+      <ul class="nav-links" id="primary-menu"></ul>
     </nav>
   </header>
 
@@ -34,18 +34,18 @@
 
     <section class="section">
       <div class="container legal-copy">
-        <p><strong>Applies to:</strong> StamPOS Cloud REST integration using Linkly VirtualPinpad in sandbox, and compatible production terminals supplied through the merchant's approved Linkly/acquirer setup.</p>
+        <p><strong>Applies to:</strong> StamPOS Cloud REST integration using Linkly VirtualPinpad in sandbox, and compatible production terminals supplied through the merchant's approved Linkly or acquirer setup.</p>
 
         <h2>Before you begin</h2>
-        <p>Confirm that the StamPOS computer and the payment terminal both have working internet access. Have the Linkly Cloud username and password for the correct environment available. For accreditation testing, use the Linkly sandbox credentials and sandbox environment configured in StamPOS.</p>
-        <p>For production use, use only the production credentials and environment details supplied after the merchant has completed onboarding through their bank or acquirer. Do not reuse sandbox credentials in production and do not manually guess a production service address.</p>
+        <p>Confirm that the StamPOS computer and payment terminal both have working internet access. Have the Linkly Cloud username and password for the correct environment available.</p>
+        <p>For production use, use only the credentials and environment details supplied after the merchant has completed onboarding through their bank or acquirer. Do not reuse sandbox credentials in production.</p>
 
         <h2>1. Start pairing on the terminal</h2>
         <p>Open the pairing or cloud-login function on the Linkly terminal. On Linkly VirtualPinpad, start the cloud pairing process from the VirtualPinpad interface.</p>
         <p>The terminal displays a temporary <strong>six-digit pairing code</strong>. Keep this screen visible while completing the next steps.</p>
 
         <h2>2. Open payment settings in StamPOS</h2>
-        <p>Sign in to StamPOS using an administrator account, then open the management area used for payment configuration.</p>
+        <p>Sign in to StamPOS using an administrator account, then open the payment configuration area.</p>
         <p>Select the Linkly Cloud payment option and choose the action to pair or connect a PIN pad.</p>
 
         <h2>3. Enter the Linkly Cloud details</h2>
@@ -58,7 +58,7 @@
 
         <h2>5. Confirm the result</h2>
         <p>When pairing succeeds, StamPOS confirms that the payment terminal is connected and stores the pairing details required for future sessions.</p>
-        <p>The terminal should also leave the pairing screen and return to its normal ready state. Restart StamPOS once during setup testing to confirm that the pairing remains available after application restart.</p>
+        <p>The terminal should also leave the pairing screen and return to its normal ready state. Restart StamPOS once during setup to confirm that the pairing remains available after application restart.</p>
 
         <h2>6. Perform a test transaction</h2>
         <p>Run a low-value test purchase in the appropriate environment. Confirm that:</p>
@@ -76,13 +76,13 @@
         <p><strong>Wrong terminal receives transactions:</strong> Remove the existing pairing and repeat the process with the intended terminal. A Linkly Cloud pairing secret is intended for one lane and one PIN pad at a time.</p>
 
         <h2>Security guidance</h2>
-        <p>Treat the Linkly username, password and stored pairing secret as sensitive business credentials. Do not include them in screenshots, accreditation evidence, support tickets or public documentation. Never email pairing secrets or payment credentials.</p>
+        <p>Treat the Linkly username, password and stored pairing secret as sensitive business credentials. Do not include them in screenshots, support tickets or public documentation. Never email pairing secrets or payment credentials.</p>
 
         <h2>Environment summary</h2>
         <p><strong>Sandbox:</strong> Used with Linkly VirtualPinpad, sandbox credentials and the sandbox environment configured in StamPOS.</p>
-        <p><strong>Production:</strong> Used only after merchant/acquirer onboarding. Linkly supplies the production login details after the merchant's bank or acquirer initiates the integration.</p>
+        <p><strong>Production:</strong> Used after merchant or acquirer onboarding with the production login details supplied for the business.</p>
 
-        <p><strong>Document version:</strong> 1.0 · <strong>Last updated:</strong> 11 July 2026</p>
+        <p><strong>Document version:</strong> 1.1 · <strong>Last updated:</strong> 16 July 2026</p>
       </div>
     </section>
   </main>
