@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="StamPOS tested support matrix for Windows versions, terminal hardware, receipt printers and payment providers.">
-  <title>Support Matrix | StamPOS Documentation</title>
+  <meta name="description" content="Supported StamPOS Windows, printer and Linkly payment configurations.">
+  <title>Supported Configurations | StamPOS Documentation</title>
   <link rel="canonical" href="https://stampos.com.au/docs/support-matrix/">
   <link rel="icon" href="../../assets/icons/stampos-icon.svg">
   <link rel="stylesheet" href="../../assets/css/styles.css">
@@ -12,84 +12,57 @@
 </head>
 <body>
 <header class="site-header">
-  <nav class="nav container">
+  <nav class="nav container" aria-label="Primary navigation">
     <a class="brand" href="../../"><span class="brand-mark"><img src="../../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
-    <ul class="nav-links" id="primary-menu"><li><a href="../">Docs</a></li><li><a href="../../hardware/">Hardware overview</a></li></ul>
+    <ul class="nav-links" id="primary-menu"><li><a href="../">Docs</a></li><li><a href="../../hardware/">Hardware</a></li></ul>
   </nav>
 </header>
 <main>
   <section class="hero section-dark subpage-hero">
     <div class="container narrow-copy">
-      <p class="eyebrow">Support matrix</p>
-      <h1>Track tested StamPOS configurations as they are validated.</h1>
-      <p class="hero-text">The support matrix records exact combinations of StamPOS version, Windows environment, terminal hardware, printer, payment provider and test status. It should be updated whenever a new physical or virtual setup is tested.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container legal-copy">
-      <h2>Recommended format</h2>
-      <p>Keep the public support matrix in this version-controlled website so every change is visible in Git. A spreadsheet can still be used internally for detailed test evidence, screenshots and sign-off notes, but the public support position should remain a simple page that customers and technicians can read without downloading a file.</p>
-      <h2>Minimum information for a new row</h2>
-      <p>Record the StamPOS version, Windows edition, physical or virtual hardware, receipt printer, cash-drawer path if applicable, payment provider, test scope, result and any setup notes. Avoid marking a configuration as supported until the actual hardware path has been exercised.</p>
+      <p class="eyebrow">Supported configurations</p>
+      <h1>Hardware and software known to work with StamPOS.</h1>
+      <p class="hero-text">Use this page to check the currently supported Windows, receipt-printer and payment setup before deployment.</p>
     </div>
   </section>
 
   <section class="section section-muted">
     <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Current entries</p>
-        <h2>Starting matrix for StamPOS 1.0.0 validation.</h2>
-      </div>
-      <div class="matrix-wrap" role="region" aria-label="StamPOS tested support matrix" tabindex="0">
+      <div class="matrix-wrap" role="region" aria-label="StamPOS supported configurations" tabindex="0">
         <table class="support-table">
           <thead>
             <tr>
-              <th>Configuration</th>
-              <th>StamPOS version</th>
-              <th>Windows environment</th>
-              <th>Terminal hardware</th>
-              <th>Receipt printer</th>
-              <th>Cash drawer</th>
-              <th>Payment provider</th>
-              <th>Status</th>
-              <th>Last updated</th>
+              <th>Component</th>
+              <th>Supported configuration</th>
+              <th>Notes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Internal VM validation</strong></td>
-              <td>1.0.0 controlled baseline</td>
-              <td>Windows 11 Pro VM</td>
-              <td>Virtual machine</td>
-              <td>Not a physical printer validation</td>
-              <td>Not a physical drawer validation</td>
-              <td>Linkly sandbox / VirtualPinpad path where configured</td>
-              <td>Tested for installer, regression and payment-flow checks</td>
-              <td>16 July 2026</td>
+              <td><strong>StamPOS</strong></td>
+              <td>Version 1.0.0</td>
+              <td>Windows desktop release.</td>
             </tr>
             <tr>
-              <td><strong>H&amp;L touchscreen pilot hardware</strong></td>
-              <td>1.0.0 controlled baseline</td>
+              <td><strong>Operating system</strong></td>
               <td>Windows 11 Pro</td>
-              <td>H&amp;L touchscreen terminal, exact model/spec pending</td>
-              <td>Star TSP100-series receipt printer</td>
-              <td>Pending exact connection path</td>
-              <td>Linkly payment path; production terminal details depend on merchant/acquirer setup</td>
-              <td>In validation</td>
-              <td>16 July 2026</td>
+              <td>Keep Windows and manufacturer drivers current.</td>
             </tr>
             <tr>
-              <td><strong>Star TSP100 receipt-printer path</strong></td>
-              <td>1.0.0 controlled baseline</td>
-              <td>Windows 11 Pro</td>
-              <td>Windows POS terminal or PC</td>
-              <td>Star TSP100-series via supported Windows or network printing workflow</td>
-              <td>To be confirmed per printer/drawer setup</td>
-              <td>Independent of payment provider</td>
-              <td>In validation</td>
-              <td>16 July 2026</td>
+              <td><strong>Receipt printer</strong></td>
+              <td>Star TSP100-series, including TSP100IIIW</td>
+              <td>Supported through the configured Windows or network-printing workflow. Confirm cutting and cash-drawer settings during installation.</td>
+            </tr>
+            <tr>
+              <td><strong>Payments</strong></td>
+              <td>Linkly Cloud REST</td>
+              <td>Requires a compatible Linkly-supported terminal, merchant onboarding and internet access.</td>
+            </tr>
+            <tr>
+              <td><strong>Cash drawer</strong></td>
+              <td>Printer-connected drawer where supported by the selected printer</td>
+              <td>Compatibility depends on the printer port, cable and drawer-pulse configuration.</td>
             </tr>
           </tbody>
         </table>
@@ -99,14 +72,9 @@
 
   <section class="section">
     <div class="container legal-copy">
-      <h2>Open details to capture</h2>
-      <ul class="note-list">
-        <li>Exact H&amp;L touchscreen model, CPU, RAM, storage and screen size.</li>
-        <li>Star printer model suffix, connection type and driver version.</li>
-        <li>Cash-drawer model and whether it opens through the printer pulse path.</li>
-        <li>Linkly production terminal model and acquirer once pilot onboarding is confirmed.</li>
-        <li>Any limitations found during refund, recovery, receipt reprint, cash-up or multi-day event tests.</li>
-      </ul>
+      <h2>Check your setup</h2>
+      <p>Hardware models and merchant payment arrangements can vary. Contact StamPOS before purchase or installation when your computer, printer, cash drawer or payment terminal is not listed above.</p>
+      <p><a class="button button-primary" href="mailto:stampos@outlook.com?subject=StamPOS%20Compatibility%20Check">Request a compatibility check</a></p>
     </div>
   </section>
 </main>
