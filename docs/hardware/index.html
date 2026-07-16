@@ -23,17 +23,17 @@
     <div class="container narrow-copy">
       <p class="eyebrow">Hardware</p>
       <h1>Build a predictable and supportable StamPOS workstation.</h1>
-      <p class="hero-text">Use known hardware combinations, document every connection and validate the full sale-to-receipt workflow before an event.</p>
+      <p class="hero-text">Use known hardware combinations and validate the full sale-to-receipt workflow before an event.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container legal-copy">
-      <h2>Minimum starting point</h2>
-      <p>For the StamPOS 1.0.0 controlled baseline, use a 64-bit Windows device with 4 GB RAM, 2 GB free local disk and a touch-friendly display of at least 1366 x 768. Windows 11 Pro is the current tested operating system for both VM and physical hardware validation. 8 GB RAM, SSD storage and at least 10 GB free space are recommended for event-day headroom.</p>
+      <h2>System requirements</h2>
+      <p>Use a 64-bit Windows 11 Pro device with at least 8 GB RAM, SSD storage, 10 GB free disk space and a touch-friendly display with a minimum resolution of 1366 x 768.</p>
 
       <h2>Windows terminal</h2>
-      <p>Use a supported Windows device with reliable storage, current security updates, a stable network connection where card payments are required and enough screen space for the touch interface. Disable unplanned sleep during trading while retaining appropriate screen-lock and security controls.</p>
+      <p>Use a reliable Windows device with current security updates and a stable network connection where card payments are required. Disable unplanned sleep during trading while retaining appropriate screen-lock and security controls.</p>
 
       <h2>Receipt printer</h2>
       <p>Install the manufacturer-supported Windows driver where the selected printer workflow requires it. Confirm paper size, print density, character encoding, cash-drawer pulse settings and automatic cutting. Print a complete sample receipt rather than relying only on a Windows test page.</p>
@@ -42,16 +42,16 @@
       <p>Where the drawer connects through the receipt printer, verify the correct port and pulse configuration. Confirm that opening behaviour matches the intended workflow and that users cannot trigger the drawer outside authorised operations.</p>
 
       <h2>Payment terminal</h2>
-      <p>For Linkly-connected EFTPOS, follow the approved pairing and merchant setup process. Record the logical terminal identity, device location and responsible merchant account. Do not reuse production credentials in demonstrations or unrelated test environments.</p>
+      <p>For Linkly-connected EFTPOS, follow the approved pairing and merchant setup process. Record the terminal identity and device location, and keep production credentials secure.</p>
 
       <h2>Network</h2>
-      <p>Core StamPOS data is local, but connected card transactions require reliable access to the configured payment service. Test the actual event network, including firewall, DNS and captive-portal behaviour. Document the fallback procedure for a network outage.</p>
+      <p>Core StamPOS data is local, but connected card transactions require reliable access to the configured payment service. Test the actual event network, including firewall, DNS and captive-portal behaviour, and plan a fallback for network outages.</p>
 
       <h2>Pre-event readiness check</h2>
-      <p>Confirm power, charging, network, printer paper, spare paper, cash drawer, application version, backups, operator accounts, products, receipt details, payment logon and a controlled test transaction. Retain a simple equipment map showing which terminal, printer and payment device belong together.</p>
+      <p>Confirm power, charging, network, printer paper, spare paper, cash drawer, application version, backups, operator accounts, products, receipt details, payment logon and a controlled test transaction.</p>
 
-      <h2>Supported-hardware status</h2>
-      <p>A device appearing technically compatible does not automatically mean it has been fully validated. Production deployments should use hardware combinations confirmed by StamPOS or tested under an agreed pilot plan. The current tested combinations are tracked in the <a href="../support-matrix/">support matrix</a>.</p>
+      <h2>Supported hardware</h2>
+      <p>Use hardware combinations listed in the <a href="../support-matrix/">support matrix</a>, or contact StamPOS to confirm compatibility before deployment.</p>
     </div>
   </section>
 </main>
