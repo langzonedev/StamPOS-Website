@@ -4,25 +4,15 @@ const root = depth >= 2 && location.pathname.includes('/docs/') ? '../../' : (is
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 
-const header = document.querySelector('.site-header');
-if (header && !document.querySelector('.beta-notice')) {
-  const notice = document.createElement('div');
-  notice.className = 'beta-notice';
-  notice.innerHTML = `<div class="container"><strong>Controlled 1.0 release:</strong> StamPOS 1.0.0 is the current controlled release baseline. Public downloads remain gated while user validation and deployment controls are completed. <a href="${root}beta/">Read the release-status notice</a>.</div>`;
-  header.insertAdjacentElement('afterend', notice);
-}
-
 if (navLinks) {
   const pagePath = location.pathname.replace(/\/index\.html$/, '/');
   const navItems = [
     ['Product', isSubpage ? `${root}#product` : '#product', pagePath === '/' ? 'product' : ''],
     ['Payments', isSubpage ? `${root}#payments` : '#payments', pagePath === '/' ? 'payments' : ''],
     ['Demo', isSubpage ? `${root}#demo` : '#demo', pagePath === '/' ? 'demo' : ''],
-    ['Docs', `${root}docs/`, '/docs/'],
-    ['Roadmap', `${root}roadmap/`, '/roadmap/'],
-    ['Releases', `${root}releases/`, '/releases/'],
+    ['Documentation', `${root}docs/`, '/docs/'],
     ['Support', `${root}support/`, '/support/'],
-    ['Downloads', `${root}downloads/`, '/downloads/', 'nav-cta']
+    ['Contact', `${root}contact/`, '/contact/', 'nav-cta']
   ];
 
   navLinks.innerHTML = navItems.map(([label, href, match, className]) => {
@@ -52,14 +42,14 @@ if (footer) {
   footer.innerHTML = `
     <div class="footer-brand-block">
       <a class="brand" href="${root}"><span class="brand-mark"><img src="${root}assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
-      <p>Practical point of sale software for events, counters and small businesses. StamPOS 1.0.0 is distributed through controlled validation before general availability.</p>
+      <p>Practical point of sale software for events, counters and small businesses.</p>
       <a href="mailto:stampos@outlook.com">stampos@outlook.com</a>
       <a class="footer-maker" href="https://langsystems.com.au/">Made by Lang Systems</a>
     </div>
-    <div class="footer-column"><strong>Product</strong><a href="${root}beta/">Pilot status</a><a href="${root}hardware/">Hardware</a><a href="${root}payments/">Payments</a><a href="${root}downloads/">Downloads</a><a href="${root}releases/">Release notes</a></div>
-    <div class="footer-column"><strong>Resources</strong><a href="${root}docs/">Documentation</a><a href="${root}docs/support-matrix/">Support matrix</a><a href="${root}docs/release-readiness/">Release readiness</a><a href="${root}docs/beta-testing/">Testing documents</a><a href="${root}support/">Support</a><a href="${root}roadmap/">Roadmap</a><a href="${root}brand/">Brand</a></div>
+    <div class="footer-column"><strong>Product</strong><a href="${root}hardware/">Hardware</a><a href="${root}payments/">Payments</a><a href="${root}docs/support-matrix/">System requirements</a><a href="${root}downloads/">Get StamPOS</a></div>
+    <div class="footer-column"><strong>Resources</strong><a href="${root}docs/">Documentation</a><a href="${root}docs/getting-started/">Getting started</a><a href="${root}docs/cloud-pairing/">Linkly pairing</a><a href="${root}support/">Support</a></div>
     <div class="footer-column"><strong>Company</strong><a href="${root}contact/">Contact</a><a href="${root}privacy/">Privacy</a><a href="${root}terms/">Terms</a><a href="${root}legal/">Copyright & legal</a></div>
-    <div class="footer-bottom"><span>&copy; <span id="year"></span> StamPOS. All rights reserved.</span><span>Controlled 1.0.0 validation and deployment planning in progress</span></div>`;
+    <div class="footer-bottom"><span>&copy; <span id="year"></span> StamPOS. All rights reserved.</span><span>Version 1.0.0</span></div>`;
 }
 
 const year = document.querySelector('#year');
@@ -82,7 +72,7 @@ function updateDemo() {
   changeEl.textContent = formatCurrency(Math.max(0, tendered - saleTotal));
   if (payButton) payButton.disabled = tendered < saleTotal || paymentComplete;
   if (statusEl && !paymentComplete) {
-    statusEl.textContent = tendered >= saleTotal ? 'Demo tender received. Ready to simulate completion.' : `Add ${formatCurrency(saleTotal - tendered)} more to the website demonstration.`;
+    statusEl.textContent = tendered >= saleTotal ? 'Tender received. Ready to complete the demonstration.' : `Add ${formatCurrency(saleTotal - tendered)} more.`;
     statusEl.className = 'payment-status';
   }
 }
@@ -90,12 +80,12 @@ cashButtons.forEach((button) => button.addEventListener('click', () => { if (!pa
 if (payButton) payButton.addEventListener('click', () => {
   if (tendered < saleTotal || paymentComplete) return;
   payButton.disabled = true;
-  payButton.textContent = 'Simulating...';
-  if (statusEl) { statusEl.textContent = 'Simulating payment recording - no transaction is processed.'; statusEl.className = 'payment-status processing'; }
+  payButton.textContent = 'Completing...';
+  if (statusEl) { statusEl.textContent = 'Completing the website demonstration.'; statusEl.className = 'payment-status processing'; }
   window.setTimeout(() => {
     paymentComplete = true;
     payButton.textContent = 'Demo complete';
-    if (statusEl) { statusEl.textContent = `Website demonstration complete. Simulated change: ${formatCurrency(tendered - saleTotal)}.`; statusEl.className = 'payment-status approved'; }
+    if (statusEl) { statusEl.textContent = `Sale complete. Change due: ${formatCurrency(tendered - saleTotal)}.`; statusEl.className = 'payment-status approved'; }
   }, 900);
 });
 if (resetButton) resetButton.addEventListener('click', () => {
