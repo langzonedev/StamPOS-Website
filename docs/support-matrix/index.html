@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Supported StamPOS Windows, printer and Linkly payment configurations.">
+  <meta name="description" content="Supported and assessed StamPOS Windows, printer, drawer and Linkly payment configurations.">
   <title>Supported Configurations | StamPOS Documentation</title>
   <link rel="canonical" href="https://stampos.com.au/docs/support-matrix/">
   <link rel="icon" href="../../assets/icons/stampos-icon.svg">
@@ -11,72 +11,20 @@
   <link rel="stylesheet" href="../../assets/css/pages.css">
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav container" aria-label="Primary navigation">
-    <a class="brand" href="../../"><span class="brand-mark"><img src="../../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
-    <ul class="nav-links" id="primary-menu"><li><a href="../">Docs</a></li><li><a href="../../hardware/">Hardware</a></li></ul>
-  </nav>
-</header>
+<header class="site-header"><nav class="nav container" aria-label="Primary navigation"><a class="brand" href="../../"><span class="brand-mark"><img src="../../assets/icons/stampos-icon.svg" alt=""></span><span class="brand-word">Stam<span>POS</span></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button><ul class="nav-links" id="primary-menu"></ul></nav></header>
 <main>
-  <section class="hero section-dark subpage-hero">
-    <div class="container narrow-copy">
-      <p class="eyebrow">Supported configurations</p>
-      <h1>Hardware and software known to work with StamPOS.</h1>
-      <p class="hero-text">Use this page to check the currently supported Windows, receipt-printer and payment setup before deployment.</p>
-    </div>
-  </section>
-
-  <section class="section section-muted">
-    <div class="container">
-      <div class="matrix-wrap" role="region" aria-label="StamPOS supported configurations" tabindex="0">
-        <table class="support-table">
-          <thead>
-            <tr>
-              <th>Component</th>
-              <th>Supported configuration</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>StamPOS</strong></td>
-              <td>Version 1.0.0</td>
-              <td>Windows desktop release.</td>
-            </tr>
-            <tr>
-              <td><strong>Operating system</strong></td>
-              <td>Windows 11 Pro</td>
-              <td>Keep Windows and manufacturer drivers current.</td>
-            </tr>
-            <tr>
-              <td><strong>Receipt printer</strong></td>
-              <td>Star TSP100-series, including TSP100IIIW</td>
-              <td>Supported through the configured Windows or network-printing workflow. Confirm cutting and cash-drawer settings during installation.</td>
-            </tr>
-            <tr>
-              <td><strong>Payments</strong></td>
-              <td>Linkly Cloud REST</td>
-              <td>Requires a compatible Linkly-supported terminal, merchant onboarding and internet access.</td>
-            </tr>
-            <tr>
-              <td><strong>Cash drawer</strong></td>
-              <td>Printer-connected drawer where supported by the selected printer</td>
-              <td>Compatibility depends on the printer port, cable and drawer-pulse configuration.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container legal-copy">
-      <h2>Check your setup</h2>
-      <p>Hardware models and merchant payment arrangements can vary. Contact StamPOS before purchase or installation when your computer, printer, cash drawer or payment terminal is not listed above.</p>
-      <p><a class="button button-primary" href="mailto:stampos@outlook.com?subject=StamPOS%20Compatibility%20Check">Request a compatibility check</a></p>
-    </div>
-  </section>
+  <section class="hero section-dark subpage-hero"><div class="container narrow-copy"><p class="eyebrow">Supported configurations</p><h1>Check the deployment baseline before installation.</h1><p class="hero-text">Listed configurations are supported directly. Unlisted hardware may require a paid compatibility assessment or a separately quoted integration.</p></div></section>
+  <section class="section section-muted"><div class="container"><div class="matrix-wrap" role="region" aria-label="StamPOS supported configurations" tabindex="0"><table class="support-table"><thead><tr><th>Component</th><th>Standard support</th><th>Alternative configuration</th></tr></thead><tbody>
+    <tr><td><strong>Operating system</strong></td><td>64-bit Windows 11 Pro</td><td>Other supported 64-bit Windows 10 or 11 editions require assessment.</td></tr>
+    <tr><td><strong>Computer</strong></td><td>4 GB RAM and 2 GB free storage minimum; 8 GB RAM and SSD recommended</td><td>Exact terminal model, display resolution, storage and drivers must be confirmed.</td></tr>
+    <tr><td><strong>Display</strong></td><td>1366 × 768 minimum; touchscreen recommended</td><td>Mouse-operated Windows PCs may be suitable where the workflow does not require touch.</td></tr>
+    <tr><td><strong>Receipt printer</strong></td><td>Star TSP100-series, including TSP100IIIW</td><td>Other Windows-compatible printers require testing of printing, cutting and reprint behaviour.</td></tr>
+    <tr><td><strong>Cash drawer</strong></td><td>Printer-connected drawer supported by the selected printer</td><td>Port, cable and pulse settings must be verified for the exact drawer and printer.</td></tr>
+    <tr><td><strong>Payments</strong></td><td>Accredited Linkly Cloud integration</td><td>The merchant's terminal, bank or acquirer must support the required Linkly arrangement.</td></tr>
+    <tr><td><strong>Other peripherals</strong></td><td>None included by default</td><td>Scanners, displays, scales and other devices require model-specific assessment.</td></tr>
+    <tr><td><strong>Other platforms</strong></td><td>Not included</td><td>Android, iOS, macOS, Linux and direct non-Linkly payments require a separate project scope.</td></tr>
+  </tbody></table></div></div></section>
+  <section class="section"><div class="container legal-copy"><h2>Compatibility assessment</h2><p>Send the exact model numbers and connection details before installation. StamPOS will confirm whether the setup is supported, supportable with limitations, requires quoted integration work or is unsuitable.</p><p><a class="button button-primary" href="mailto:stampos@outlook.com?subject=StamPOS%20Compatibility%20Check">Request a compatibility check</a></p></div></section>
 </main>
 <footer class="site-footer"><div class="container"></div></footer>
 <script src="../../assets/js/main.js"></script>
